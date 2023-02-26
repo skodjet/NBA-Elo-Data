@@ -59,12 +59,12 @@ p {
     margin-top: 40px;
 }
 
-.analysisGraph1 {
+.graphs {
     margin-top: 70px;
 }
 
 
-  .tab {
+  /* .tab {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
@@ -81,9 +81,9 @@ p {
     transition: 0.3s;
     font-size: 17px;
     display: inline-block; /* display the tab buttons inline */
-  }
+  } */
   
-  .tab button:hover {
+  /* .tab button:hover {
     background-color: #ddd;
   }
   
@@ -98,4 +98,4 @@ p {
     border-top: none;
     text-align: center;
   }
-  
+   */

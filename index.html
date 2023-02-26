@@ -31,13 +31,36 @@
                 <p>If there’s one thing that NBA fans can never seem to agree on, it’s who’s the best. The debates about which team has the <span  style="font-style: italic;">chance of winning a championship in a given season</span>, which team has the <span  style="font-style: italic;">strongest legacy</span>, or who was the <span  style="font-style: italic;">most dominant</span> have raged on since the league came into existence. Through analyzing data about each team’s <span  style="font-weight: bold;">wins, losses, and point differential,</span> we can hope to answer all of these questions. </p>
                 <p>Let’s take a look at what stats we’ll be using to wade through this data.</p>
             </div>
-            <div class="analysisGraph1">
+            <div class="graphs">
                 <h2>What is Elo?</h2>
-                <p>The statistic that is used to <span  style="font-weight: bold;">calculate the strength of a team over a given season</span> is called “Elo.” It was originally created by Arpad Elo, a physics professor looking for a better way to evaluate the strength of chess players. Later, FiveThirtyEight applied this concept to NBA data. We will be visualizing that data to <span  style="font-weight: bold; color: #2175BF;">find the strength of NBA teams.</span></p>
+                <p>The statistic that is used to <span  style="font-weight: bold;">calculate the strength of a team over a given season is called “Elo.”</span> It was originally created by Arpad Elo, a physics professor looking for a better way to evaluate the strength of chess players. Later, FiveThirtyEight applied this concept to NBA data. We will be visualizing that data to <span  style="font-weight: bold; color: #2175BF;">find the strength of NBA teams.</span></p>
                 <p>At its core, Elo is a very simple statistic. The only inputs are if a team won or lost a particular game, and how much they won or lost by. If a team scores an upset victory as the underdog, they get vastly more Elo than if they ran over a weak team (sorry, Knicks fans). Similarly, if a team wins by 40 points, they would gain more Elo than if they only won by 1 or 2 points. Finally, Elo was created for zero-sum games, so the losing team loses the exact amount of Elo that the winning team gains.</p>
-                <p>With that out of the way, let’s look at how each team’s Elo score has fared since the year 1977 up until 2015. We’ve averaged each team’s Elo by season, so the data isn’t as overwhelming as if there was a dot for each game. You can use the dropdown menu to select any one of the 30 teams in the NBA. Note that some teams haven’t been around too long, so their lines may start later on. Also, note that 1500 Elo is about average, but the number may fluctuate slightly by year.</p>
+                <p>With that out of the way, <span  style="font-weight: bold; color: #2175BF;">let’s look at how each team’s Elo score has fared since the year 1977 up until 2015.</span> We’ve averaged each team’s Elo by season, so the data isn’t as overwhelming like it would be if there was a point for each game. You can use the dropdown menu to select any one of the 30 teams in the NBA. Note that some teams haven’t been around too long, so their lines may start later on. Also, note that 1500 Elo is about average, but the number may fluctuate slightly by year.</p>
             </div>
-
+            <div class = "graphs">
+                <p>++ line char++</p>
+                <p>In this chart, you can see the <span style="font-style: italic; color: #CF3C25;">dynasties</span> of great teams that NBA fans rave about. For example, the 1990s Bulls led by Michael Jordan peaked at nearly 1800 Elo in 1997, which is far above the 1500 average. You can also see Tim Duncan’s San Antonio Spurs of the 2000s and 2010s as a model of consistency. Their Elo remained above average from 1998 until 2015. It was a streak that allowed them to reach the playoffs for nearly 20 years straight while winning 5 NBA championships.</p>
+                <h3>Taking a Look at Point Differential</h3>
+                <p>Since the number of points scored is a key element in the Elo equation, let’s take a closer look at how point differential relates to Elo over the history of the NBA. <span style = "color: green; font-weight: bold;">green</span> dots represent <span style = "font-style: italic;">older</span> seasons, and <span style = "color: red; font-weight: bold;">red</span> dots represent more <span style = "font-style: italic;">recent</span> ones. Once again, you can <span style="font-style: italic;">select which franchise you’d like to look at with the dropdown menu.</span></p>
+            </div>
+            <div class = "graphs">
+                <p>++ insert red and green scatter</p>
+                <p>Here, notice that a majority of the <span style = "font-weight: bold;">highest number of mean points</span> scored over a season were <span style = "font-weight: bold;">during the 1980s.</span> Among these high-scoring seasons, one team stands out-- the <span style = "font-weight: bold; color: #1D428A;">Denver Nuggets</span>. The Nuggets hold the top 5 highest scoring seasons ever (all in the 80s), but they also allowed the most points against them by far.</p>
+                <p>**INSERT SCREENSHOT OF NUGGETS SELECTED IN SCATTERPLOT HERE**</p>
+                <p>On the complete other end of the spectrum, we have the early 2000s <span style = "font-weight: bold; color: #C8102E;">Detroit Pistons</span>. Their airtight defense commanded by Ben Wallace stifled offenses and kept them from averaging over 90 points between the years of 2002 and 2005.</p>
+                <p>**INSERT SCREENSHOT OF PISTONS SELECTED IN SCATTERPLOT HERE**</p>
+            </div>
+            <div class="graphs">
+                <h2> Does Elo Correlate to Winning?</h2>
+                <p>Finally, let’s take a look at how Elo correlates to what matters most, winning. Below is a stacked bar chart showing <span style = "font-weight: bold;color: #2175BF;">how many wins and losses each team racked up since 1977.</span></p>
+                <p>**INSERT STACKED BAR CHART OF WINS AND LOSSES HERE**
+                </p>
+                <p>Looking back at our first visualization, we can see that <span style = "font-weight: bold;">teams with consistently high Elo,</span> such as the Los Angeles Lakers, <span style = "font-weight: bold;">have a large amount of wins as well.</span> Similarly, teams such as the Timberwolves who have spent a <span style = "font-weight: bold;">large amount of their existence below average Elo have over 400 more losses than wins.</span> It seems like Elo is a pretty good predictor of which teams will finish with a winning or losing record.</p>
+            </div>
+            <div class = graphs>
+                <h2>Conclusion</h2>
+                <p>So what do you do if your favorite home team has a consistently bad Elo? Don’t despair, as there’s one thing that Elo can never predict, and that’s <span style = "font-weight: bold;">upset potential.</span> For example, remember that one of the few teams to beat Michael Jordan’s legendary 1996 Bulls were the meager Charlotte Hornets, who barely mustered a .500 win percentage that season. And do't forget about the 8th seed New York Knicks who made it all the way to the finals. Remember that basketball is unpredictable, and that’s what makes it worth watching.</p>
+            </div>
           </div>
 
           <div id="tab2" class="tabcontent">
