@@ -13,7 +13,7 @@ function openTab(evt, tabName) {
   }
 
   function winLoss (){
-    const brush = vl.selectInterval().encodings("x");
+    const brush = vl.selectInterval().encodsings("x");
       
     const wins = vl.markBar()
       .data(nba_elo_typed)

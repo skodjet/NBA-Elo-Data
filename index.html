@@ -7,7 +7,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
-        
+        <script src="https://vega.github.io/vega/vega.min.js"></script>    
         <script src="js/index.js"></script>
     </head>
     <header class="navigation">
@@ -57,7 +57,7 @@
                 <p>Finally, let’s take a look at how Elo correlates to what matters most, winning. Below is a stacked bar chart showing <span style = "font-weight: bold;color: #2175BF;">how many wins and losses each team racked up since 1977.</span></p>
 
 
-                <div id="vis"></div>
+                <div id = 'vis'> hello </div>
 
 
                 <p>Looking back at our first visualization, we can see that <span style = "font-weight: bold;">teams with consistently high Elo,</span> such as the Los Angeles Lakers, <span style = "font-weight: bold;">have a large amount of wins as well.</span> Similarly, teams such as the Timberwolves who have spent a <span style = "font-weight: bold;">large amount of their existence below average Elo have over 400 more losses than wins.</span> It seems like Elo is a pretty good predictor of which teams will finish with a winning or losing record.</p>
@@ -69,8 +69,16 @@
           </div>
 
           <div id="tab2" class="tabcontent">
-            <h3>Persuasion</h3>
-            <p>This is the content for Tab 2.</p>
+            <div class="intros">
+                <h2>East v West</h2>
+                <p>smomething something</p>
+            </div>
+            <div class ="graphs">
+                <h2>hello</h2>
+                <p>inert some graph idk</p>
+                <p>In this stacked bar chart, we see a <span style = "font-weight: bold;">representation of teams who have had an average ELO value >1700.</span> An average ELO value of over 1700 is <span style = "font-style:italic;">above average, signifying higher strength</span> than counterpart franchises. Each team with this specified ELO range is stacked on top of each other, in ‘1700’ intervals, signifying that they have reached an average ELO value of greater than 1700 at some point in time. </p>
+                <p>Teams are divided into <span style = "font-weight: bold; color:green;">“East”</span> or <span style = "font-weight: bold; color:purple;">"West"</span> depending on the conference to which they belong. As you can see, the <span style = "font-weight: bold; color:green;">Bulls, Cavaliers, Celtics, Heat, and Sixers are all Eastern Conference teams who have reached an ELO value of over 1700,</span> whereas the <span style = "font-weight: bold; color:purple;">Spurs, Warriors, and Lakers are the only Western Conference teams who have reached an ELO value of 1700. </span> Seeing that there are more Eastern Conference teams who have reached this elite ELO threshold rather than Western Conference teams, it is evident that <span style = "font-weight: bold;">the Eastern Conference has maintained a stronger conglomeration of teams over time. </span></p>
+            </div>
           </div>
 
         <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
