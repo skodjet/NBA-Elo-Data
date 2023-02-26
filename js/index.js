@@ -148,8 +148,8 @@ const plot_1 = {
               "type": "nominal"
             },
             {
-              "field": "fran_id",
-              "type": "nominal"
+              "field": "year_id",
+              "type": "quantitative"
             }
           ]
         }
