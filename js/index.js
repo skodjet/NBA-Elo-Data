@@ -850,7 +850,7 @@ const plot_5 = {
       {
           "name": "color",
           "type": "ordinal",
-          "range": "category",
+          "range": ["green", "purple"],
           "domain": {
               "data": "table",
               "field": "c"
@@ -918,16 +918,6 @@ const plot_5 = {
           ]
       }
   ],
-  "encoding": {
-    "color": {
-      "field": "c",
-      "type": "nominal",
-      "scale": {
-        "range": ['purple', 'green']
-      }
-    }
-  }
- 
 }
 
 vegaEmbed('#vis5', plot_5);
