@@ -1,0 +1,170 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/skodjet/NBA-Elo-Data/main/nba_elo_is_copy.csv"
+  },
+  "layer": [
+    {
+      "mark": {"type": "point", "filled": true},
+      "params": [
+        {
+          "name": "team",
+          "select": {
+            "type": "point",
+            "fields": [
+              "fran_id"
+            ]
+          },
+          "bind": {
+            "input": "select",
+            "options": [
+              null,
+              "Bucks",
+              "Bulls",
+              "Cavaliers",
+              "Celtics",
+              "Clippers",
+              "Grizzlies",
+              "Hawks",
+              "Heat",
+              "Hornets",
+              "Jazz",
+              "Kings",
+              "Knicks",
+              "Lakers",
+              "Magic",
+              "Mavericks",
+              "Nets",
+              "Nuggets",
+              "Pacers",
+              "Pelicans",
+              "Pistons",
+              "Raptors",
+              "Rockets",
+              "Sixers",
+              "Spurs",
+              "Suns",
+              "Thunder",
+              "Timberwolves",
+              "Trailblazers",
+              "Warriors",
+              "Wizards"
+            ],
+            "name": "Franchise",
+            "labels": ["Default"]
+          }
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "pts",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "scale": {"domain": [80, 130]},
+          "title": "Mean Points Scored"
+        },
+        "y": {
+          "field": "opp_pts",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "scale": {"domain": [80, 132]},
+          "title": "Mean Opponent Points Scored"
+        },
+        "color": {
+          "condition": {
+            "param": "team",
+            "field": "year_id",
+            "type": "temporal",
+            "title": "Year",
+            "scale": {"range": ["#32ff00", "#ff0004"]},
+            "legend": {
+              "gradientLength": 600,
+              "gradientThickness": 20,
+              "labelExpr": "timeFormat(datum.value, '%Y')"
+            }
+          },
+          "value": "#BCBCBC"
+        },
+        "detail": {
+          "field": "fran_id",
+          "type": "nominal"
+        },
+        "order": {
+          "condition": {
+            "param": "team",
+            "empty": false,
+            "value": 10
+          },
+          "value": 1
+        },
+        "size": {
+          "condition": {
+            "param": "team",
+            "empty": false,
+            "value": 169
+          }
+        }
+      }
+    },
+    {
+      "mark": {"type": "point", "filled": true, "opacity": 0},
+      "transform": [
+        {
+          "filter": {
+            "param": "team" 
+          }
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "pts",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "scale": {"domain": [80, 130]}
+        },
+        "y": {
+          "field": "opp_pts",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "scale": {"domain": [80, 132]}
+        },
+        "size": {
+          "condition": {
+            "param": "team",
+            "empty": false,
+            "value": 169
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year_id",
+            "type": "temporal",
+            "title": "Year",
+            "format": "%Y"
+          },
+          {
+            "field": "fran_id",
+            "type": "nominal",
+            "title": "Franchise"
+          },
+          {
+            "field": "pts",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "title": "Mean Points Scored",
+            "format": ".2f"
+          },
+          {
+            "field": "opp_pts",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "title": "Mean Opponent Points Scored",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ],
+  "width": 900,
+  "height": 600
+}

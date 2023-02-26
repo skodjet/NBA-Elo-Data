@@ -1,0 +1,159 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/skodjet/NBA-Elo-Data/main/nba_elo_is_copy.csv"
+  },
+  "layer": [
+    {
+      "mark": {"type": "line", "point": false},
+      "params": [
+        {
+          "name": "team",
+          "select": {
+            "type": "point",
+            "fields": [
+              "fran_id"
+            ]
+          },
+          "bind": {
+            "input": "select",
+            "options": [
+              null,
+              "Bucks",
+              "Bulls",
+              "Cavaliers",
+              "Celtics",
+              "Clippers",
+              "Grizzlies",
+              "Hawks",
+              "Heat",
+              "Hornets",
+              "Jazz",
+              "Kings",
+              "Knicks",
+              "Lakers",
+              "Magic",
+              "Mavericks",
+              "Nets",
+              "Nuggets",
+              "Pacers",
+              "Pelicans",
+              "Pistons",
+              "Raptors",
+              "Rockets",
+              "Sixers",
+              "Spurs",
+              "Suns",
+              "Thunder",
+              "Timberwolves",
+              "Trailblazers",
+              "Warriors",
+              "Wizards"
+            ],
+            "name": "Franchise",
+            "labels": ["Default"]
+          }
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "year_id",
+          "type": "temporal",
+          "scale": {"domain": [{"year": 1976}, {"year": 2016}]},
+          "axis": {"title": "Year"}
+        },
+        "y": {
+          "field": "elo_n",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "scale": {"domain": [1100, 1900]},
+          "axis": {"title": "Mean ELO"}
+        },
+        "color": {
+          "condition": {
+            "param": "team",
+            "field": "fran_id",
+            "type": "nominal",
+            "legend": {"title": "Franchise"},
+            "scale": {"range": ["#0F6915", "#CF3C25", "#78180A", "#2DA60F", "#828282", "#124682", "#DE2209", "#AD0202", "#36E3D5", "#F0EC26", "#710BBA", "#E8900C", "#CCC921", "#2175BF", "#0A8BFC", "#000408", "#CCD16F", "#767801", "#090D42", "#404BC2", "#A8524A", "#F5AFA9", "#5A8AFA", "#A8A8A8", "#FAA700", "#FCE1A9", "#5C6C94", "#9E8078", "#0227A1", "#998D8D"]}
+          },
+          "value": "grey"
+        },
+        "size": {
+          "condition": {
+            "param": "team",
+            "empty": false,
+            "value": 5
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "team",
+            "value": 1,
+            "empty": false
+          },
+          "value": 0.25
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true
+      },
+      "encoding": {
+        "x": {
+          "field": "year_id",
+          "type": "temporal",
+          "scale": {"domain": [{"year": 1976}, {"year": 2016}]}
+        },
+        "y": {
+          "field": "elo_n",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "scale": {"domain": [1100, 1900]}
+        },
+        "color": {
+          "condition": {
+            "param": "team",
+            "field": "fran_id",
+            "type": "nominal",
+            "scale": {"range": ["#0F6915", "#CF3C25", "#78180A", "#2DA60F", "#828282", "#124682", "#DE2209", "#AD0202", "#36E3D5", "#F0EC26", "#710BBA", "#E8900C", "#CCC921", "#2175BF", "#0A8BFC", "#000408", "#CCD16F", "#767801", "#090D42", "#404BC2", "#A8524A", "#F5AFA9", "#5A8AFA", "#A8A8A8", "#FAA700", "#FCE1A9", "#5C6C94", "#9E8078", "#0227A1", "#998D8D"]}
+          },
+          "value": "grey"
+        },
+        "opacity": {
+          "condition": {
+            "param": "team",
+            "value": 1,
+            "empty": false
+          },
+          "value": 1
+        },
+        "size": {
+          "condition": {
+            "param": "team",
+            "empty": false,
+            "value": 144
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {
+            "field": "fran_id",
+            "type": "nominal",
+            "title": "Team"
+          },
+          {
+            "field": "elo_n",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "title": "Mean ELO"
+          }
+        ]
+      }
+    }
+  ],
+  "width": 900,
+  "height": 600
+}
