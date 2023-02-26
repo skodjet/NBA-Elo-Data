@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CS485 Designing for Dimensions</title>
+        <link rel="icon" href="./images/nba_logo.png">
+        <link href="./css/style.css" type="text/css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+    </head>
+    <header class="navigation">
+        <nav>
+            <ul class="navbar">
+                <a href="./index.html"><img src="./images/nba_logo.png" width="60px" id = "logo"></a>
+                <p id ="title">CS485 - Designing for Dimensions</p>
+                <p id ="names">Allen Zhang,Dubem Nnake, Suvra Majumder, Thomas Skodje, Zhongzheng Xu</p>
+            </ul>
+        </nav>
+    <body>
+        <h1 style="text-align: center; padding-top: 30px;">Slamming Analytics: Exploring the NBA through Data Visualization</h1>
+        
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'tab1')">Analysis</button>
+            <button class="tablinks" onclick="openTab(event, 'tab2')">Persuasion</button>
+          </div>
+          
+          <div id="tab1" class="tabcontent">
+            <div class ="intros">
+                <h2>Calculating the Strength of NBA Teams
+                </h2>
+                <p>If there’s one thing that NBA fans can never seem to agree on, it’s who’s the best. The debates about which team has the <span  style="font-style: italic;">chance of winning a championship in a given season</span>, which team has the <span  style="font-style: italic;">strongest legacy</span>, or who was the <span  style="font-style: italic;">most dominant</span> have raged on since the league came into existence. Through analyzing data about each team’s <span  style="font-weight: bold;">wins, losses, and point differential,</span> we can hope to answer all of these questions. </p>
+                <p>Let’s take a look at what stats we’ll be using to wade through this data.</p>
+            </div>
+            <div class="analysisGraph1">
+                <h2>What is Elo?</h2>
+                <p>The statistic that is used to <span  style="font-weight: bold;">calculate the strength of a team over a given season</span> is called “Elo.” It was originally created by Arpad Elo, a physics professor looking for a better way to evaluate the strength of chess players. Later, FiveThirtyEight applied this concept to NBA data. We will be visualizing that data to <span  style="font-weight: bold; color: #2175BF;">find the strength of NBA teams.</span></p>
+                <p>At its core, Elo is a very simple statistic. The only inputs are if a team won or lost a particular game, and how much they won or lost by. If a team scores an upset victory as the underdog, they get vastly more Elo than if they ran over a weak team (sorry, Knicks fans). Similarly, if a team wins by 40 points, they would gain more Elo than if they only won by 1 or 2 points. Finally, Elo was created for zero-sum games, so the losing team loses the exact amount of Elo that the winning team gains.</p>
+                <p>With that out of the way, let’s look at how each team’s Elo score has fared since the year 1977 up until 2015. We’ve averaged each team’s Elo by season, so the data isn’t as overwhelming as if there was a dot for each game. You can use the dropdown menu to select any one of the 30 teams in the NBA. Note that some teams haven’t been around too long, so their lines may start later on. Also, note that 1500 Elo is about average, but the number may fluctuate slightly by year.</p>
+            </div>
+
+          </div>
+
+          <div id="tab2" class="tabcontent">
+            <h3>Persuasion</h3>
+            <p>This is the content for Tab 2.</p>
+          </div>
+    </body>
+    <script src="js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.2"></script>
+</html>
