@@ -7,9 +7,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
-        <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.20.2"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.0"></script>
+        
+        <script src="js/index.js"></script>
     </head>
     <header class="navigation">
         <nav>
@@ -74,13 +73,16 @@
             <p>This is the content for Tab 2.</p>
           </div>
 
-          <script>
-            const spec = winLoss();
-            vegaEmbed('#vis', spec);
-          </script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-tooltip@0"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="./js/index.js"></script>
+        <script>
+            const el = document.getElementById('vis');
+            el.appendChild(winLoss().el);
+        </script>
     </body>
     <script src="js/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.2"></script>
 </html>
