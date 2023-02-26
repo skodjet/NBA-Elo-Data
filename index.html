@@ -5,8 +5,11 @@
         <link rel="icon" href="./images/nba_logo.png">
         <link href="./css/style.css" type="text/css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.20.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.0"></script>
     </head>
     <header class="navigation">
         <nav>
@@ -53,13 +56,16 @@
             <div class="graphs">
                 <h2> Does Elo Correlate to Winning?</h2>
                 <p>Finally, let’s take a look at how Elo correlates to what matters most, winning. Below is a stacked bar chart showing <span style = "font-weight: bold;color: #2175BF;">how many wins and losses each team racked up since 1977.</span></p>
-                <p>**INSERT STACKED BAR CHART OF WINS AND LOSSES HERE**
-                </p>
+
+
+                <div id="vis"></div>
+
+
                 <p>Looking back at our first visualization, we can see that <span style = "font-weight: bold;">teams with consistently high Elo,</span> such as the Los Angeles Lakers, <span style = "font-weight: bold;">have a large amount of wins as well.</span> Similarly, teams such as the Timberwolves who have spent a <span style = "font-weight: bold;">large amount of their existence below average Elo have over 400 more losses than wins.</span> It seems like Elo is a pretty good predictor of which teams will finish with a winning or losing record.</p>
             </div>
             <div class = graphs>
                 <h2>Conclusion</h2>
-                <p>So what do you do if your favorite home team has a consistently bad Elo? Don’t despair, as there’s one thing that Elo can never predict, and that’s <span style = "font-weight: bold;">upset potential.</span> For example, remember that one of the few teams to beat Michael Jordan’s legendary 1996 Bulls were the meager Charlotte Hornets, who barely mustered a .500 win percentage that season. And do't forget about the 8th seed New York Knicks who made it all the way to the finals. Remember that basketball is unpredictable, and that’s what makes it worth watching.</p>
+                <p>So what do you do if your favorite home team has a consistently bad Elo? Don’t despair, as there’s one thing that Elo can never predict, and that’s <span style = "font-weight: bold;">upset potential.</span> For example, remember that one of the few teams to beat Michael Jordan’s legendary 1996 Bulls were the meager Charlotte Hornets, who barely mustered a .500 win percentage that season. And don't forget about the 8th seed New York Knicks who made it all the way to the finals. Remember that basketball is unpredictable, and that’s what makes it worth watching.</p>
             </div>
           </div>
 
@@ -67,6 +73,11 @@
             <h3>Persuasion</h3>
             <p>This is the content for Tab 2.</p>
           </div>
+
+          <script>
+            const spec = winLoss();
+            vegaEmbed('#vis', spec);
+          </script>
     </body>
     <script src="js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
