@@ -1,0 +1,153 @@
+{
+    "vconcat": [
+      {
+        "mark": {
+          "type": "bar"
+        },
+        "data": {
+          "url": "https://raw.githubusercontent.com/skodjet/NBA-Elo-Data/main/nba_elo_is_copy.csv"
+        },
+        "transform": [
+          {
+            "filter": {
+              "param": "name79"
+            }
+          },
+          {
+            "calculate": "datum.game_result == \"W\" ? \"Wins\" : \"Losses\"",
+            "as": "Outcome"
+          },
+          {
+            "aggregate": [
+              {
+                "op": "count",
+                "as": "count"
+              }
+            ],
+            "groupby": [
+              "fran_id",
+              "Outcome"
+            ]
+          }
+        ],
+        "title": "Win and Loss Count by Team",
+        "encoding": {
+          "x": {
+            "field": "fran_id",
+            "type": "nominal",
+            "axis": {
+              "title": "Team"
+            }
+          },
+          "y": {
+            "field": "count",
+            "type": "quantitative"
+          },
+          "color": {
+            "field": "Outcome",
+            "type": "nominal",
+            "scale": {
+              "range": [
+                "red",
+                "green"
+              ]
+            }
+          },
+          "tooltip": [
+            {
+              "field": "fran_id",
+              "type": "nominal"
+            },
+            {
+              "field": "Outcome",
+              "type": "nominal"
+            },
+            {
+              "field": "count",
+              "type": "nominal"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "line",
+          "point": {
+            "size": 50,
+            "filled": true,
+            "stroke": "white"
+          }
+        },
+        "title": "Maximum ELO of Each Year",
+        "params": [
+          {
+            "name": "name79",
+            "select": {
+              "type": "interval",
+              "encodings": [
+                "x"
+              ]
+            }
+          }
+        ],
+        "data": {
+          "url":"https://raw.githubusercontent.com/skodjet/NBA-Elo-Data/main/nba_elo_is_copy.csv"
+        },
+        "transform": [
+          {
+            "aggregate": [
+              {
+                "op": "max",
+                "field": "elo_n",
+                "as": "Max ELO"
+              }
+            ],
+            "groupby": [
+              "year_id"
+            ]
+          }
+        ],
+        "encoding": {
+          "x": {
+            "field": "year_id",
+            "type": "nominal",
+            "axis": {
+              "title": "Year"
+            }
+          },
+          "y": {
+            "field": "Max ELO",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                1600,
+                1900
+              ]
+            }
+          },
+          "color": {
+            "value": "purple"
+          },
+          "tooltip": [
+            {
+              "field": "Max ELO",
+              "type": "nominal"
+            },
+            {
+              "field": "fran_id",
+              "type": "nominal"
+            }
+          ]
+        }
+      }
+    ],
+    "spacing": 20
+  }
+  
+  
+  
+  
+  
+  
+  
+  
