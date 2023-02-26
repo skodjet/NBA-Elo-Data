@@ -57,10 +57,14 @@ p {
 
 .intros {
     margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .graphs {
     margin-top: 70px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
  
