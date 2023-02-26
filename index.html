@@ -7,8 +7,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
-        <script src="https://vega.github.io/vega/vega.min.js"></script>    
-        <script src="js/index.js"></script>
+        
     </head>
     <header class="navigation">
         <nav>
@@ -19,6 +18,9 @@
             </ul>
         </nav>
     <body>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.2"></script>
         <h1 style="text-align: center; padding-top: 30px;">Slamming Analytics: Exploring the NBA through Data Visualization</h1>
         
         <div class="tab">
@@ -40,13 +42,13 @@
                 <p>With that out of the way, <span  style="font-weight: bold; color: #2175BF;">let’s look at how each team’s Elo score has fared since the year 1977 up until 2015.</span> We’ve averaged each team’s Elo by season, so the data isn’t as overwhelming like it would be if there was a point for each game. You can use the dropdown menu to select any one of the 30 teams in the NBA. Note that some teams haven’t been around too long, so their lines may start later on. Also, note that 1500 Elo is about average, but the number may fluctuate slightly by year.</p>
             </div>
             <div class = "graphs">
-                <p>++ line char++</p>
+                <div id="vis2"></div>
                 <p>In this chart, you can see the <span style="font-style: italic; color: #CF3C25;">dynasties</span> of great teams that NBA fans rave about. For example, the 1990s Bulls led by Michael Jordan peaked at nearly 1800 Elo in 1997, which is far above the 1500 average. You can also see Tim Duncan’s San Antonio Spurs of the 2000s and 2010s as a model of consistency. Their Elo remained above average from 1998 until 2015. It was a streak that allowed them to reach the playoffs for nearly 20 years straight while winning 5 NBA championships.</p>
                 <h3>Taking a Look at Point Differential</h3>
                 <p>Since the number of points scored is a key element in the Elo equation, let’s take a closer look at how point differential relates to Elo over the history of the NBA. <span style = "color: green; font-weight: bold;">green</span> dots represent <span style = "font-style: italic;">older</span> seasons, and <span style = "color: red; font-weight: bold;">red</span> dots represent more <span style = "font-style: italic;">recent</span> ones. Once again, you can <span style="font-style: italic;">select which franchise you’d like to look at with the dropdown menu.</span></p>
             </div>
             <div class = "graphs">
-                <p>++ insert red and green scatter</p>
+                <div id="vis3"></div>
                 <p>Here, notice that a majority of the <span style = "font-weight: bold;">highest number of mean points</span> scored over a season were <span style = "font-weight: bold;">during the 1980s.</span> Among these high-scoring seasons, one team stands out-- the <span style = "font-weight: bold; color: #1D428A;">Denver Nuggets</span>. The Nuggets hold the top 5 highest scoring seasons ever (all in the 80s), but they also allowed the most points against them by far.</p>
                 <p>**INSERT SCREENSHOT OF NUGGETS SELECTED IN SCATTERPLOT HERE**</p>
                 <p>On the complete other end of the spectrum, we have the early 2000s <span style = "font-weight: bold; color: #C8102E;">Detroit Pistons</span>. Their airtight defense commanded by Ben Wallace stifled offenses and kept them from averaging over 90 points between the years of 2002 and 2005.</p>
@@ -57,7 +59,7 @@
                 <p>Finally, let’s take a look at how Elo correlates to what matters most, winning. Below is a stacked bar chart showing <span style = "font-weight: bold;color: #2175BF;">how many wins and losses each team racked up since 1977.</span></p>
 
 
-                <div id = 'vis'> hello </div>
+                <div id="vis"></div>
 
 
                 <p>Looking back at our first visualization, we can see that <span style = "font-weight: bold;">teams with consistently high Elo,</span> such as the Los Angeles Lakers, <span style = "font-weight: bold;">have a large amount of wins as well.</span> Similarly, teams such as the Timberwolves who have spent a <span style = "font-weight: bold;">large amount of their existence below average Elo have over 400 more losses than wins.</span> It seems like Elo is a pretty good predictor of which teams will finish with a winning or losing record.</p>
@@ -70,27 +72,26 @@
 
           <div id="tab2" class="tabcontent">
             <div class="intros">
-                <h2>East v West</h2>
-                <p>smomething something</p>
+                <h2>Conference Strength: Is the West Really Best? </h2>
+                <p>While in other sports divisions are the main competitive entities within leagues, in the NBA, the eastern and western conferences are the main focus. Teams play more games against other teams in their own conference, and conferences also determine playoff seeding, with the winner of each conference playing each other in the NBA finals. It’s clear that <span style = "font-weight: bold;">conferences have a large impact on the competitive landscape of the league.</span></p>
+                <p>Due to this, there has been a dispute as to which conference has tougher competition. Many people argue that the Western Conference has been historically tougher, with teams like Kobe and Shaq’s Lakers leading the charge. Others say that the Celtics and Bulls of the East make it the more competitive conference. <span style = "font-weight: bold; color:#2175BF">Let’s take a look at the data to see which side has more valid arguments.</span></p>
             </div>
             <div class ="graphs">
-                <h2>hello</h2>
-                <p>inert some graph idk</p>
+                <h2>Geographical Visualization of Eastern and Western Conferences</h2>
+                <div id="vis4"></div>
                 <p>In this stacked bar chart, we see a <span style = "font-weight: bold;">representation of teams who have had an average ELO value >1700.</span> An average ELO value of over 1700 is <span style = "font-style:italic;">above average, signifying higher strength</span> than counterpart franchises. Each team with this specified ELO range is stacked on top of each other, in ‘1700’ intervals, signifying that they have reached an average ELO value of greater than 1700 at some point in time. </p>
                 <p>Teams are divided into <span style = "font-weight: bold; color:green;">“East”</span> or <span style = "font-weight: bold; color:purple;">"West"</span> depending on the conference to which they belong. As you can see, the <span style = "font-weight: bold; color:green;">Bulls, Cavaliers, Celtics, Heat, and Sixers are all Eastern Conference teams who have reached an ELO value of over 1700,</span> whereas the <span style = "font-weight: bold; color:purple;">Spurs, Warriors, and Lakers are the only Western Conference teams who have reached an ELO value of 1700. </span> Seeing that there are more Eastern Conference teams who have reached this elite ELO threshold rather than Western Conference teams, it is evident that <span style = "font-weight: bold;">the Eastern Conference has maintained a stronger conglomeration of teams over time. </span></p>
+                <p>Additionally, in the connected map, we depict all 30 NBA franchises at their respective locations, indicated by a circle. <span style = "font-weight: bold;">The size of the circle is dependent on the mean ELO value of that franchise within a specific year; </span>the year can be adjusted using the slider at the bottom. As you adjust the year, you will come across times where the ELO value for a specific franchise is higher than it was in previous years, and also higher than that of other teams. </p>
+                <p>As you continue to move the slider, you will notice that <span style = "font-weight: bold;">from the majority of the time between 1980-present, the <span style="color:green">Eastern Conference</span> maintained higher average ELO values than its <span style="color:purple">Western Conference</span> counterparts. We see this trend particularly in the 1990’s, mid 2000’s and 2010’s. Seeing the trends correlated with this data, it is clear that the <span style="font-weight: bold; color: green;">Eastern Conference has maintained a stronger sense of supremacy over time.</span></p>
             </div>
-          </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@4"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-tooltip@0"></script>
-        <script src="https://d3js.org/d3.v5.min.js"></script>
-        <script src="./js/index.js"></script>
-        <script>
-            const el = document.getElementById('vis');
-            el.appendChild(winLoss().el);
-        </script>
+            <div class = graphs>
+                <h2>hello</h2>
+                <p>In this chart, we depict the <span style="font-weight: bold;">Average ‘ELO’ values for <span style="font-weight: bold; color: green;">Eastern Conference</span> and <span style="font-weight: bold; color: purple;">Western Conferencee</span> NBA teams from the year 1976 up until the present.</span> We chose the year 1976 because that was the first year that we started to see consistent data from the majority of teams represented by each conference.</p>
+                <p> To reiterate, <span style="font-weight: bolds;">WELO is a simple measure of strength based on game-by-game results,</span> and the only inputs to calculate it are the final score of each game, and when and where it was played. Teams always gain Elo points for winning, but they get more credit for upset victories and for winning by larger margins.</p>
+                <div id = "vis5"></div>
+                <p>As you can see, <span style="font-weight: bold;">Eastern Conference teams held a higher average ELO for the majority of the time between 1976 and 2020.</span> Seeing that Eastern Conference teams held a higher average ELO than Western Conference teams during that time, <span style="font-weight: bold;">it is obvious that the Eastern Conference has been stronger than the Western Conference in terms of overall competitiveness.</span></p>
+            </div>
+          </div>    
+        <script src="js/index.js"></script> 
     </body>
-    <script src="js/index.js"></script>
 </html>
